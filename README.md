@@ -23,17 +23,17 @@ When a user clicks a button on the website:
 
 ```
 User (Browser)
-     │
-     ▼
+     │    ▲
+     ▼    |
 AWS Amplify (Frontend Hosting)
-     │
-     ▼
+     │    ▲
+     ▼    |
 API Gateway (GET /getfact)
-     │
-     ▼
+     │    ▲
+     ▼    |
 AWS Lambda
-     │
-     ▼
+     │    ▲
+     ▼    |
 DynamoDB (Cloud Facts Table)
 ```
 
@@ -113,7 +113,7 @@ Created an HTTP API and integrated with Lambda
 Added route:
 
 * Method: **GET**
-* Path: **/getfact**
+* Path: **/funfact**
 
 ![Route](Key_Screenshots/07-Add_route_to_api.jpg)
 
@@ -201,17 +201,7 @@ Lambda is assigned an IAM role with permissions to:
 
 # Challenges Faced & Solutions During Project
 
-## 1. CORS Issues
-
-Problem:
-Frontend could not call API due to CORS restrictions.
-
-Solution:
-Enabled CORS in API Gateway and configured required headers.
-
----
-
-## 2. Lambda Permissions Issue
+## 1. Lambda Permissions Issue
 
 Problem:
 Lambda was unable to access DynamoDB.
@@ -221,7 +211,7 @@ Attached correct IAM role with DynamoDB permissions.
 
 ---
 
-## 3. API Not Returning Data
+## 2. API Not Returning Data
 
 Problem:
 Incorrect integration or route setup in API Gateway.
@@ -231,7 +221,7 @@ Verified method (GET), route path, and Lambda integration.
 
 ---
 
-## 4. Amplify Deployment Issues
+## 3. Amplify Deployment Issues
 
 Problem:
 Frontend not loading properly after deployment.
@@ -249,6 +239,6 @@ This project demonstrates how to build a **simple and scalable serverless applic
 
 # Author
 
-**Korada Jaikishan**
+**Korada Jaikishan**  
 Cloud Computing Learner | AWS Beginner
 --------------------------------------
